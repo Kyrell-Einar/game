@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cardápio — Bar & Porções</title>
+<style>
+  :root{
+    --bg:#faf7f2;
+    --panel:#ffffff;
+    --accent:#e09b2f;
+    --muted:#6b6b6b;
+    --black:#111;
+    --gap:14px;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:linear-gradient(180deg,var(--bg),#fff);
+    color:var(--black);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.35;
+    padding:24px;
+  }
+
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 340px;
+    gap:24px;
+  }
+
+  header{
+    grid-column:1/-1;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:6px;
+  }
+  .brand{
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  .logo{
+    width:72px;height:72px;border-radius:8px;
+    background:linear-gradient(135deg,var(--accent),#c66d1e);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  }
+  h1{font-size:20px;margin:0}
+  p.subtitle{margin:0;color:var(--muted);font-size:13px}
+
+  .menu{
+    background:var(--panel);
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  }
+  .category{
+    margin-bottom:18px;
+  }
+  .cat-title{
+    display:flex;align-items:center;gap:10px;margin-bottom:10px;
+  }
+  .cat-title h2{
+    margin:0;font-size:15px;color:var(--accent);
+    letter-spacing:1px;
+  }
+  .items{display:grid;grid-template-columns: 1fr 1fr; gap:8px 18px;}
+  .item{
+    display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px dashed #eee;
+  }
+  .item p{margin:0}
+  .price{font-weight:700;color:var(--black);min-width:70px;text-align:right}
+
+  /* sidebar */
+  aside{
+    background:var(--panel);
+    padding:18px;border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    height:fit-content;
+  }
+  .small{
+    font-size:13px;color:var(--muted);
+  }
+  .callout{background:linear-gradient(90deg,var(--accent),#d37a16);color:#fff;padding:10px;border-radius:8px;text-align:center;margin-bottom:12px;font-weight:700}
+
+  footer{grid-column:1/-1;margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+
+  /* responsive */
+  @media (max-width:900px){
+    .wrap{grid-template-columns:1fr; padding:12px}
+    .items{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <div class="logo">BAR</div>
+        <div>
+          <h1>Bar & Porções</h1>
+          <p class="subtitle">Vendas de bebidas alcoólicas proibida para menores de 18 anos</p>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <p class="small">Horário almoço (Super Combo): Domingos e feriados — 11h às 16h</p>
+        <p class="small">Servimos porções e drinks</p>
+      </div>
+    </header>
+
+    <!-- Main menu -->
+    <main class="menu" aria-label="Cardápio principal">
+
+      <!-- Bebidas & Drinks - Destilados -->
+      <section class="category">
+        <div class="cat-title"><h2>Bebidas & Drinks — Destilados</h2></div>
+        <div class="items">
+          <div class="item"><p>Conhaque Dreher</p><div
